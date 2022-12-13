@@ -43,3 +43,6 @@ export ROS_MASTER_URI=http://主机IP:11311
 export ROS_HOSTNAME=从机IP
 ```   
 `source .bashrc`    
+
+## 寻找已安装ros包
+`rospack find XXX`  
