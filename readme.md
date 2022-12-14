@@ -53,3 +53,27 @@ export ROS_HOSTNAME=从机IP
 在此操作下再创建工作空间加入功能包编译，不会出现问题      
 
 
+## move_base参数设置以及amcl包参数设置问题
+amcl:       
+/odom以及/map链接的主要是由amcl包实现的      
+如果请求/odomy以及/map链接出现异常，可能是amcl包设置超时时间有关
+<param name="transform_tolerance" value="1.0" />        
+这个时间可以设长一些      
+        
+move_base:      
+costmap_common_params最好将global和local分开      
+global的膨胀半径可以设的比local的稍微大一些，这样容易绕开障碍物      
+global的cost_scaling_factor可以设的比local大一些，容易绕开障碍物     
+        
+local的膨胀半径可以设的比global的稍微大一些，这样容易绕开障碍物      
+local膨胀半径一般设为小车的半径      
+local的cost_scaling_factor可以设的比global大一些，容易绕开障碍物   
+        
+base_local_planner_params参数设定需按照实际情况        
+最大线速度和最大角速度都需要实测        
+前进模拟参数sim_time非常重要      
+如果机器人在本地规划上表现不太好容易打转，多半是本地路径规划太短导致      
+可以适当延长sim_time时间        
+
+其他参数调节      
+`https://www.cnblogs.com/lizhensheng/p/11117583.html`
