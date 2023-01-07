@@ -66,7 +66,7 @@ costmap_common_params最好将global和local分开
 global的膨胀半径可以设的比local的稍微大一些，这样容易绕开障碍物      
 global的cost_scaling_factor可以设的比local大一些，容易绕开障碍物     
         
-local的膨胀半径可以设的比global的稍微大一些，这样容易绕开障碍物      
+local的膨胀半径可以设的比global的稍微小一些，这样容易绕开障碍物      
 local膨胀半径一般设为小车的半径      
 local的cost_scaling_factor可以设的比global大一些，容易绕开障碍物   
         
